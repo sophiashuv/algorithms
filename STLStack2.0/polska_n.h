@@ -21,16 +21,13 @@ double counter(char op,   double const & op1,  double const & op2){
     else return  0;
 }
 
-
 bool isOperator(char c) {
     return (!isalpha(c) && !isdigit(c));
 }
 
-
 bool isOperator(string c) {
     return c == "+" || c == "-" || c == "*" || c == "/" || c == "^";
 }
-
 
 int getPriority(char C) {
     if (C == '-' || C == '+')
@@ -41,7 +38,6 @@ int getPriority(char C) {
         return 3;
     return 0;
 }
-
 
 vector<string> infixToPrefix2(string infix) {
     stack<char> operators;
@@ -87,7 +83,6 @@ vector<string> infixToPrefix2(string infix) {
         }
         else {
             while (!operators.empty() && getPriority(infix[i]) <= getPriority(operators.top())) {
-
                 string oop1 = result.back();
                 result.pop_back();
                 string oop2 = result.back();
@@ -103,7 +98,6 @@ vector<string> infixToPrefix2(string infix) {
         }
     }
     while (!operators.empty()) {
-
         string oop1 = result.back();
         result.pop_back();
         string oop2 = result.back();
@@ -115,10 +109,8 @@ vector<string> infixToPrefix2(string infix) {
         result.push_back(oop1);
         result.push_back(oop);
     }
-
     return result;
 }
-
 
 //stack<string> infixToPrefix(string infix) {
 //    stack<char> operators;
@@ -253,7 +245,6 @@ double CalculateTheExpression(vector<string> expression) {
     result = stack.top();
     return result;
 }
-
 
 void showsvector(vector <string> s) {
     for (int i = 0; i < s.size(); ++i) cout << s[i] << " ";
