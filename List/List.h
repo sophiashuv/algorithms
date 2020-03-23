@@ -25,13 +25,6 @@ struct Node {
         out << a.x << " ";
         return out;
     }
-
-    Node& operator =(const Node&a) {
-        this->x = a.x;
-        this->Next = a->Next;
-        this->Prev = a->Prev;
-        return *this;
-    }
 };
 
 
