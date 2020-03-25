@@ -198,14 +198,28 @@ public:
       }
     }
 
+    //    friend List<T> operator+( List<T>& list1, List<T>& list2) {
+//        if (list1.Size() != list2.Size()) throw "Size exception";
+//        List<T> res;
+//        Node<T> *begin1 = list1.Head;
+//        Node<T> *begin2 = list2.Head;
+//        while (begin1 != nullptr) {
+//            res.push_back(begin1->x + begin2->x);
+//            begin1 = begin1->Next;
+//            begin2 = begin2->Next;
+//        } return res;
+//    }
+
     friend List<T> operator+( List<T>& list1, List<T>& list2) {
-        if (list1.Size() != list2.Size()) throw "Size exception";
         List<T> res;
         Node<T> *begin1 = list1.Head;
         Node<T> *begin2 = list2.Head;
         while (begin1 != nullptr) {
-            res.push_back(begin1->x + begin2->x);
-            begin1 = begin1->Next;
+            res.push_back(begin1->x);
+            begin1= begin1->Next;
+        }
+        while (begin2 != nullptr) {
+            res.push_back(begin2->x);
             begin2 = begin2->Next;
         } return res;
     }
