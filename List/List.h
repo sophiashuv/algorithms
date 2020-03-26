@@ -232,6 +232,24 @@ public:
             begin1 = begin1->Next;
         } return res;
     }
+    
+     void unique() {
+        Node<T> *begin1 = Head;
+        Node<T> *begin2 = begin1->Next;
+        for (int i = 0; i < size; ++i) {
+            for (int j = i+1; j < size; ++j) {
+                if(begin1->x == begin2->x){
+                    pop(j);
+                    j--;
+                    begin2 = begin2->Prev;
+                }
+                begin2 = begin2->Next;
+            }
+            begin1 = begin1->Next;
+            if (begin1 == nullptr) break;
+            begin2 = begin1->Next;
+        }
+    }
 
     List& operator =(const List&a) {
         if(this == &a)
