@@ -76,22 +76,13 @@ public:
         cout << "Element Deleted" << endl;
     }
 
-//    void Remove_value(int value) {
-//        HashNode *entry = table[Hash(value)];
-//        if (entry == nullptr) throw "There is no such value\n";
-//        while (entry != nullptr) {
-//            if (entry->value == value) {
-//
-//            }
-//
-//        }
-//    }
-
-    void printNode(HashNode* entry){
+    string toStringNode(HashNode* entry){
+        string res;
         while (entry != nullptr) {
-            cout << entry->value << "->";
+            res += to_string(entry->value) + "->";
             entry = entry->next;
         }
+        return res;
     }
 
     HashNode* Search(int hashKey) {
@@ -100,14 +91,18 @@ public:
         return entry;
     }
 
-    void PrintTable() {
+    string toStringTable(){
+        string res;
         for (int i = 0; i < tableSize; i++) {
             HashNode* entry = table[i];
             if(entry != nullptr) {
-                cout << i << ": ";
-                printNode(entry);
-                cout << "\n";
+                string n = toStringNode(entry);
+                res += to_string(i) + ": " + n + "\n";
             }
-        }
+        } return res;
+    }
+
+    void PrintTable() {
+        cout << toStringTable();
     }
 };
