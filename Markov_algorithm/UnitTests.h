@@ -35,7 +35,7 @@ public:
         rules.push_back(rule7);
         Rule rule8("F", "1", false);
         rules.push_back(rule8);
-        Rule rule9("1", "1", false);
+        Rule rule9("1", "1", true);
         rules.push_back(rule9);
         string text("11*1111");
         cout << text << endl;
@@ -45,11 +45,11 @@ public:
     void test2(){
         cout << "\n--------SECOND RULE--------\n";
         vector<Rule> rules;
-        Rule rule1("|+|", "||+", false);
+        Rule rule1("|*|", "||*", false);
         rules.push_back(rule1);
-        Rule rule2("+", "", true);
+        Rule rule2("*", "", true);
         rules.push_back(rule2);
-        string text("||+||||");
+        string text("||*||||");
         cout << text << endl;
         assert(Markov(text, rules) == "||||||");
     }
