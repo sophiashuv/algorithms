@@ -124,18 +124,27 @@ public:
         }
     }
 
-    void pop_front() {
+     void pop_front() {
+        if (Head == nullptr) throw "Empty list exception\n";
         Node<T>* t = Head->Next;
         delete Head;
         Head = t;
+        if (Head != nullptr)
+            Head->Prev = nullptr;
+        else
+            Tail = nullptr;
         size--;
     }
 
     void pop_back() {
+        if (Tail == nullptr) throw "Empty list exception\n";
         Node<T>* t = Tail->Prev;
-        delete Tail;
+        delete(Tail);
         Tail = t;
-        Tail->Next = nullptr;
+        if (Tail != nullptr)
+            Tail->Next = nullptr;
+        else
+            Head = nullptr;
         size--;
     }
 
