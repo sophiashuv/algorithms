@@ -248,9 +248,9 @@ public:
         for (int i = 0; i < size; ++i) {
             for (int j = i+1; j < size; ++j) {
                 if(begin1->x == begin2->x){
+                    begin2 = begin2->Prev;
                     pop(j);
                     j--;
-                    begin2 = begin2->Prev;
                 }
                 begin2 = begin2->Next;
             }
