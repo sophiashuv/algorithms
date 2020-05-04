@@ -10,8 +10,7 @@
 #include"Graph.h"
 #include <vector>
 
-class Dejkstra
-{
+class Dijkstra {
 private:
     Graph graph;
     bool* marked;
@@ -65,7 +64,7 @@ private:
     }
 
 public:
-    Dejkstra(Graph ggraph) : graph(ggraph) {
+    Dijkstra(Graph ggraph) : graph(ggraph) {
         marked = new bool[graph.getNumberOfVertexes()];
         fromAr = new int[graph.getNumberOfVertexes()];
         pathLength = new int[graph.getNumberOfVertexes()];
