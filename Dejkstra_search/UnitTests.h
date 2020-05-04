@@ -29,7 +29,7 @@ public:
         graph.addEdge(5, 6, 9);
         vector<int> way;
         vector<int> way_chack = {6, 3, 1};
-        Dejkstra algorithm(graph);
+        Dijkstra algorithm(graph);
         int k = algorithm.findWay(1, 6, way);
         assert(k == 11);
         assert(way == way_chack);
