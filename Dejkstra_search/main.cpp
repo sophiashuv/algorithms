@@ -23,7 +23,7 @@ int main()
     graph.print();
 
     vector<int> way;
-    Dejkstra algorithm(graph);
+    Dijkstra algorithm(graph);
     cout << endl << algorithm.findWay(1, 6, way) << endl;
     for (auto it = way.rbegin(); it != way.rend(); it++) cout << *it << "  ";
     system("pause");
