@@ -8,7 +8,9 @@
 #endif //SPARSEMATRIX_UNITTESTS_H
 
 #include "Matrix.h"
+
 using namespace std;
+
 
 class UnitTests{
 public:
@@ -83,6 +85,20 @@ public:
                                 "20 25 30 0 \n"
                                 "230 35 0 40 \n"
                                 "0 40 45 45 \n");
+    }
+
+    void Testmultiplie2(){
+        Matrix <int>m1, m2, m3;
+        m1.readMatrix("/Users/sophiyca/ClionProjects/SparseMatrix/m1");
+        m2.readMatrix("/Users/sophiyca/ClionProjects/SparseMatrix/m1");
+        m1.add(1, 4, 0);
+        m2.add(67, 4, 0);
+        m3 = m1 * m2;
+        assert(m3.toString() == "420 50 9 129 804 \n"
+                                "7250 103 48 3474 37989 \n"
+                                "2907 30 76 69 268 \n"
+                                "4889 56 56 403 3082 \n"
+                                "4986 108 118 144 0 \n");
     }
 
 };
